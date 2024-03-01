@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+  <title>Bob Watches</title>
+</head>
+
+<body>
+  <section class="intro">
+    <div class="bg-image-vertical h-100" style="background-color: #EFD3E4;">
+
+      <div class="mask d-flex align-items-center h-100">
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-12 col-lg-10">
+              <div class="card" style="border-radius: 1rem;">
+                <div class="card-body p-5">
+                  <div id="success-alert" class="alert alert-success alert-dismissible fade" role="alert">
+                    <strong>Successfully Saved!</strong>
+                  </div>
+                  <div id="overlay">
+                    <div class="w-100 d-flex justify-content-center align-items-center">
+                      <div class="spinner"></div>
+                    </div>
+                  </div>
+                  <h1 class="mb-5 text-center">Mailing address</h1>
+                  <form action="" id="address-frm">
+                    <fieldset id="frm-fieldset">
+                      <div class="row">
+                        <div class="col-12 col-md-6 mb-4">
+                          <div class="form-outline required">
+                            <label class="form-label" for="streetAddress">Street address</label>
+                            <input class="form-control" id="streetAddress" name="streetAddress"
+                              onchange="validateAddress()" required />
+                            <div id="invalid-streetAddress" class="invalid-feedback">
+                              Please enter a Street address.
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-12 col-md-6 mb-4">
+                          <div class="form-outline">
+                            <label class="form-label" for="secondaryAddress">Street address line 2</label>
+                            <input class="form-control" id="secondaryAddress" name="secondaryAddress" />
+                          </div>
+                        </div>
+                        <div class="col-12 col-md-6 mb-4">
+                          <div class="form-outline required">
+                            <label class="form-label" for="city">City </label>
+                            <input class="form-control" id="city" name="city" required />
+                            <div id="invalid-city" class="invalid-feedback">
+                              Please enter a City.
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-12 col-md-6 mb-4">
+                          <div class="form-outline required">
+                            <label class="form-label" for="state">State, territory, or military post
+                            </label>
+                            <select class="form-control" id="state" name="state" onchange="validateAddress()" required>
+                              <option value>- Select -</option>
+                              <option value="AL">AL - Alabama</option>
+                              <option value="AK">AK - Alaska</option>
+                              <option value="AS">AS - American Samoa</option>
+                              <option value="AZ">AZ - Arizona</option>
+                              <option value="AR">AR - Arkansas</option>
+                              <option value="CA">CA - California</option>
+                              <option value="CO">CO - Colorado</option>
+                              <option value="CT">CT - Connecticut</option>
+                              <option value="DE">DE - Delaware</option>
+                              <option value="DC">DC - District of Columbia</option>
+                              <option value="FL">FL - Florida</option>
+                              <option value="GA">GA - Georgia</option>
+                              <option value="GU">GU - Guam</option>
+                              <option value="HI">HI - Hawaii</option>
+                              <option value="ID">ID - Idaho</option>
+                              <option value="IL">IL - Illinois</option>
+                              <option value="IN">IN - Indiana</option>
+                              <option value="IA">IA - Iowa</option>
+                              <option value="KS">KS - Kansas</option>
+                              <option value="KY">KY - Kentucky</option>
+                              <option value="LA">LA - Louisiana</option>
+                              <option value="ME">ME - Maine</option>
+                              <option value="MD">MD - Maryland</option>
+                              <option value="MA">MA - Massachusetts</option>
+                              <option value="MI">MI - Michigan</option>
+                              <option value="MN">MN - Minnesota</option>
+                              <option value="MS">MS - Mississippi</option>
+                              <option value="MO">MO - Missouri</option>
+                              <option value="MT">MT - Montana</option>
+                              <option value="NE">NE - Nebraska</option>
+                              <option value="NV">NV - Nevada</option>
+                              <option value="NH">NH - New Hampshire</option>
+                              <option value="NJ">NJ - New Jersey</option>
+                              <option value="NM">NM - New Mexico</option>
+                              <option value="NY">NY - New York</option>
+                              <option value="NC">NC - North Carolina</option>
+                              <option value="ND">ND - North Dakota</option>
+                              <option value="MP">MP - Northern Mariana Islands</option>
+                              <option value="OH">OH - Ohio</option>
+                              <option value="OK">OK - Oklahoma</option>
+                              <option value="OR">OR - Oregon</option>
+                              <option value="PA">PA - Pennsylvania</option>
+                              <option value="PR">PR - Puerto Rico</option>
+                              <option value="RI">RI - Rhode Island</option>
+                              <option value="SC">SC - South Carolina</option>
+                              <option value="SD">SD - South Dakota</option>
+                              <option value="TN">TN - Tennessee</option>
+                              <option value="TX">TX - Texas</option>
+                              <option value="UM">UM - United States Minor Outlying Islands</option>
+                              <option value="UT">UT - Utah</option>
+                              <option value="VT">VT - Vermont</option>
+                              <option value="VI">VI - Virgin Islands</option>
+                              <option value="VA">VA - Virginia</option>
+                              <option value="WA">WA - Washington</option>
+                              <option value="WV">WV - West Virginia</option>
+                              <option value="WI">WI - Wisconsin</option>
+                              <option value="WY">WY - Wyoming</option>
+                              <option value="AA">AA - Armed Forces Americas</option>
+                              <option value="AE">AE - Armed Forces Africa</option>
+                              <option value="AE">AE - Armed Forces Canada</option>
+                              <option value="AE">AE - Armed Forces Europe</option>
+                              <option value="AE">AE - Armed Forces Middle East</option>
+                              <option value="AP">AP - Armed Forces Pacific</option>
+                            </select>
+                            <div id="invalid-state" class="invalid-feedback">
+                              Please select a State.
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-12 col-md-6 mb-4">
+                          <div class="form-outline required">
+                            <label class="form-label" for="ZIPCode">ZIP code</label>
+                            <input class="form-control" id="ZIPCode" name="ZIPCode" pattern="[\d]{5}(-[\d]{4})?"
+                              onchange="validateAddress()" required />
+                            <div id="invalid-ZIPCode" class="invalid-feedback">
+                              Please select a Zip Code.
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-12 col-md-6 mb-4">
+                          <div class="form-outline">
+                            <label class="form-label" for="urbanization">Urbanization (Puerto Rico only)</label>
+                            <input class="form-control" id="urbanization" name="urbanization" />
+                          </div>
+                        </div>
+                        <input type="hidden" id="streetAddressAbbreviation" name="streetAddressAbbreviation">
+                        <input type="hidden" id="cityAbbreviation" name="cityAbbreviation">
+                        <input type="hidden" id="postalCode" name="postalCode">
+                        <input type="hidden" id="province" name="province">
+                        <input type="hidden" id="country" name="country">
+                        <input type="hidden" id="countryISOCode" name="countryISOCode">
+                        <button id="frm-submit-btn" data-mdb-ripple-init type="button" onclick="save()" disabled="true"
+                          class="btn btn-primary btn-block mb-4">Submit</button>
+                      </div>
+                    </fieldset>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  </section>
+  <script src="index.js"></script>
+</body>
+
+</html>
